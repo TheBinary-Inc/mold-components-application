@@ -6,6 +6,9 @@ const CREATE_PRODUCT = require("./routes/content/create-product");
 const ORDER_OF_CART = require("./routes/cart/order-of-cart");
 const ALL_PRODUCTS = require("./routes/content/allproducts");
 const cors = require("cors");
+const CATEGORY = require("./routes/category/category");
+const SUBCATEGORY = require("./routes/category/subcategory");
+const CATEGORY_LIST = require("./routes/category/categorylist");
 require("dotenv/config");
 
 const app = express();
@@ -25,7 +28,10 @@ app.use(express.json());
 app.use("/auth", CREATE_ADMIN);
 app.use("/auth", LOGIN_ADMIN);
 app.use("/product", CREATE_PRODUCT);
-app.use("/product", ALL_PRODUCTS)
+app.use("/product", ALL_PRODUCTS);
+app.use("/category", CATEGORY);
+app.use("/category", SUBCATEGORY);
+app.use("/category", CATEGORY_LIST);
 app.use("/order", ORDER_OF_CART);
 
 app.listen(HOST_PORT, () => {

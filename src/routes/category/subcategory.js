@@ -1,15 +1,15 @@
 const express = require("express");
 const PRODUCT_SCHEMA = require("../../models/Product");
-const CATEGORY = express.Router();
+const SUBCATEGORY = express.Router();
 
-CATEGORY.get("/categories/:categoryName", async (req, res) => {
-  const { categoryName } = req.params;
-  if(categoryName){
-    const category = await PRODUCT_SCHEMA.find({productMainCategory_uz: categoryName})
-    if(category){
+SUBCATEGORY.get("/categories/:subCategoryName", async (req, res) => {
+  const { subCategoryName } = req.params;
+  if(subCategoryName){
+    const subCategory = await PRODUCT_SCHEMA.find({productSubCategory_uz: subCategoryName})
+    if(subCategory){
       res.status(200).json({
         message: "Successfull fetched!",
-        category
+        subCategory
       })
     }
     else{
@@ -25,4 +25,4 @@ CATEGORY.get("/categories/:categoryName", async (req, res) => {
   }
 })
 
-module.exports = CATEGORY;
+module.exports = SUBCATEGORY
