@@ -1,0 +1,24 @@
+{
+  "name": "mold-components",
+  "version": "1.0.0",
+  "description": "This is an E-commerce website for Organization",
+  "main": "index.js",
+  "author": "Ibrokhim Jalalov",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./src"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cloudinary": "^1.27.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.1",
+    "multer": "^1.4.3",
+    "nodemon": "^2.0.15"
+  }
+}
