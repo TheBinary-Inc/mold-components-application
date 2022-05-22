@@ -37,12 +37,14 @@ CATEGORY_LIST.get("/category-list", async (req, res) => {
       }
       return categoryItem
     });;
-    res.json({
+   if(allproducts_maincategoriesuz && allproducts_maincategoriesru && allproducts_subcategoriesuz && allproducts_subcategoriesru){
+    res.status(200).json({
       main_categories_uz: allproducts_maincategoriesuz,
       main_categories_ru: allproducts_maincategoriesru,
       sub_categories_uz: allproducts_subcategoriesuz,
       sub_categories_ru: allproducts_subcategoriesru
     })
+   }
 })
 
 module.exports = CATEGORY_LIST;

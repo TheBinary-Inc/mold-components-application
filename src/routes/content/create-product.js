@@ -68,11 +68,14 @@ CREATE_PRODUCT.post("/create-product", verify_admin, upload.array("productImages
         fs.unlinkSync(path);
       }
     }
+
+    let parsedDescriptionUz= JSON.parse(productDescription_uz);
+    let parsedDescriptionRu= JSON.parse(productDescription_ru);
     const NEW_PRODUCT = await PRODUCT_SCHEMA.create({
       productName_uz,
       productName_ru,
-      productDescription_uz: productDescription_uz.split(","),
-      productDescription_ru: productDescription_ru.split(","),
+      productDescription_uz: parsedDescriptionUz,
+      productDescription_ru: parsedDescriptionRu,
       productImages: urls,
       productSizesAndQuantity: productSizesAndQuantity.split(","),
       productMainCategory_uz,
