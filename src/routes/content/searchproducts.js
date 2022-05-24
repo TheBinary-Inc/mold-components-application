@@ -13,9 +13,12 @@ SEARCH_PRODUCTS.get("/search/:key", async (req, res) => {
       {productSubCategory_uz: {$regex: req.params.key}},
       {productSubCategory_ru: {$regex: req.params.key}},
     ]
-  })
+  }).limit(4)
+
   let searchedProductsResult = sizePriceQuantity(searchedProducts)
-  res.status(200).json(searchedProductsResult)
+  if(searchedProductsResult){
+    res.status(200).json(searchedProductsResult);
+  }
 })
 
 module.exports = SEARCH_PRODUCTS;

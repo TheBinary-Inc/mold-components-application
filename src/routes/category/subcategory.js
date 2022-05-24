@@ -1,11 +1,13 @@
 const express = require("express");
+const sizePriceQuantity = require("../../helpers/size_price_quantity");
 const PRODUCT_SCHEMA = require("../../models/Product");
 const SUBCATEGORY = express.Router();
 
-SUBCATEGORY.get("/categories/:subCategoryName", async (req, res) => {
+SUBCATEGORY.get("/subcategories/:subCategoryName", async (req, res) => {
   const { subCategoryName } = req.params;
   if(subCategoryName){
-    const subCategory = await PRODUCT_SCHEMA.find({productSubCategory_uz: subCategoryName})
+    const result = await PRODUCT_SCHEMA.find({productSubCategory_uz: subCategoryName})
+    let subCategory = sizePriceQuantity(result)
     if(subCategory){
       res.status(200).json({
         message: "Successfull fetched!",
