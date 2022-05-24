@@ -18,7 +18,7 @@ const MANAGE_PRODUCTS = require("./routes/content/manageproducts");
 require("dotenv/config");
 
 const app = express();
-const HOST_PORT = process.env.SERVER_HOST || 1337;
+const PORT = process.env.PORT || 1337;
 const MONGO_CREDENCIALS = process.env.MONGO_CREDENCIALS;
 mongoose
   .connect(MONGO_CREDENCIALS)
@@ -46,6 +46,6 @@ app.use("/category", CATEGORYNEST);
 app.use("/order", ORDER_OF_CART);
 app.use("/validation", VALIDATION);
 
-app.listen(HOST_PORT, () => {
-  console.log(`LISTENING ON PORT ${HOST_PORT}`);
+app.listen(PORT, () => {
+  console.log(`LISTENING ON PORT ${PORT}`);
 });
