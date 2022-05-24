@@ -18,7 +18,7 @@ const MANAGE_PRODUCTS = require("./routes/content/manageproducts");
 require("dotenv/config");
 
 const app = express();
-const HOST_PORT = process.env.SERVER_HOST;
+const HOST_PORT = process.env.SERVER_HOST || 1337;
 const MONGO_CREDENCIALS = process.env.MONGO_CREDENCIALS;
 mongoose
   .connect(MONGO_CREDENCIALS)

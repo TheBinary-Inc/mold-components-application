@@ -9,7 +9,7 @@ SINGLE_PRODUCT.get("/single-product/:productId", async (req, res) => {
   if(productId){
     const singleProduct = await PRODUCT_SCHEMA.findOne({_id: productId});
     let singleRifinedProduct = sizePriceQuantity([singleProduct])
-    res.status(200).json({
+    res.status(200).json({     
       message: "Successfully found!",
       singleProduct: singleRifinedProduct
     })
