@@ -4,7 +4,7 @@ const varify_admin = require("../../middlewares/verify_token");
 const ORDER_SCHEMA = require("../../models/Order");
 const ORDER_OF_CART = express.Router();
 
-ORDER_OF_CART.post("/create-order", varify_admin, async (req, res) => {
+ORDER_OF_CART.post("/create-order", async (req, res) => {
   const { fullname, phonenumber, orderedproducts } = req.body;
 
   const JOI_VALIDATION_SCHEMA = Joi.object({
