@@ -13,6 +13,14 @@ const ORDER_SCHEMA = new mongoose.Schema({
     type: Array,
     required: true,
     min: 1
+  },
+  orderedAt: {
+    type: Date,
+    default: Date.now(),
+  },
+  contacted: {
+    type: Boolean,
+    default: false
   }
 })
 

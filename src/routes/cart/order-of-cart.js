@@ -40,4 +40,20 @@ ORDER_OF_CART.post("/create-order", async (req, res) => {
   }
 })
 
+ORDER_OF_CART.get("/all-orders" , async (req, res) => {
+    const allOrders = await ORDER_SCHEMA.find({});
+
+    if(allOrders){
+      res.status(200).json({
+        message: "Successfully fetched!",
+        allOrders
+      })
+    }
+    else{
+      res.status(404).json({
+        message: "Orders not found!"
+      })
+    }
+})
+
 module.exports = ORDER_OF_CART

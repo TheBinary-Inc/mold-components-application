@@ -15,6 +15,8 @@ const VALIDATION = require("./routes/test/validation");
 const CATEGORY_REEL = require("./routes/category/categoryreel");
 const SEARCH_PRODUCTS = require("./routes/content/searchproducts");
 const MANAGE_PRODUCTS = require("./routes/content/manageproducts");
+const ORDER_UPDATE = require("./routes/cart/update-single-order");
+const ORDER_DELETE = require("./routes/cart/delete-single-order");
 require("dotenv/config");
 
 const app = express();
@@ -44,6 +46,8 @@ app.use("/category", CATEGORY_LIST);
 app.use("/category", CATEGORY_REEL);
 app.use("/category", CATEGORYNEST);
 app.use("/order", ORDER_OF_CART);
+app.use("/order", ORDER_UPDATE);
+app.use("/order", ORDER_DELETE);
 app.use("/validation", VALIDATION);
 
 app.listen(PORT, () => {
