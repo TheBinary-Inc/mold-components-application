@@ -16,7 +16,7 @@ const ORDER_SCHEMA = new mongoose.Schema({
   },
   orderedAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
   contacted: {
     type: Boolean,
