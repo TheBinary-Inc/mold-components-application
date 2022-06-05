@@ -40,7 +40,7 @@ ORDER_OF_CART.post("/create-order", async (req, res) => {
   }
 })
 
-ORDER_OF_CART.get("/all-orders" , async (req, res) => {
+ORDER_OF_CART.get("/all-orders" , varify_admin, async (req, res) => {
     const allOrders = await ORDER_SCHEMA.find({});
 
     if(allOrders){
