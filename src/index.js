@@ -37,7 +37,7 @@ app.use("/auth", CREATE_ADMIN);
 app.use("/auth", LOGIN_ADMIN);
 app.use("/product", CREATE_PRODUCT);
 app.use("/product", ALL_PRODUCTS);
-app.use("/product", SINGLE_PRODUCT);
+app.use("/product", SINGLE_PRODUCT); 
 app.use("/product", SEARCH_PRODUCTS);
 app.use("/manage", MANAGE_PRODUCTS);
 app.use("/category", CATEGORY);
