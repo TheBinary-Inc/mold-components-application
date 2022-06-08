@@ -64,9 +64,6 @@ CATEGORYNEST.get("/category-nest", async (req, res) => {
   //   productSubCategories_ru.push([...new Set(mainsArr_ru)])
   // }  
 
-
-  //
-
   res.status(200).json({
     productSubCategories_uz,
     productSubCategories_ru,
