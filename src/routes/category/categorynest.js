@@ -35,7 +35,7 @@ CATEGORYNEST.get("/category-nest", async (req, res) => {
     ],
     [""],
     [
-      "Металга ишлов берувчи ЧПУ ускуна",
+      "Металга ишлов берувчи ЧПУ ускуна"  ,   
  	 	 	"Электроэрозия йули билан сим оркали кесувчи ускуна",
  	 	 	"Электроэрозия йули билан прошивка килувчи ускуна",
  	 	 	"Термопластавтоматлар",
@@ -62,7 +62,10 @@ CATEGORYNEST.get("/category-nest", async (req, res) => {
   //   }
   //   productSubCategories_uz.push([...new Set(mainsArr_uz)])
   //   productSubCategories_ru.push([...new Set(mainsArr_ru)])
-  // }
+  // }  
+
+
+  //
 
   res.status(200).json({
     productSubCategories_uz,
