@@ -19,7 +19,8 @@ ORDER_OF_CART.post("/create-order", async (req, res) => {
     const NEW_ORDER = await ORDER_SCHEMA.create({
         fullname,
         phonenumber, 
-        orderedproducts
+        orderedproducts,
+        orderedAt: String(new Date())
     })
     if(NEW_ORDER){
       res.status(201).json({

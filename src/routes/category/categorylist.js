@@ -3,11 +3,6 @@ const PRODUCT_SCHEMA = require("../../models/Product");
 const CATEGORY_LIST = express.Router();
 
 CATEGORY_LIST.get("/category-list", async (req, res) => {
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
     const allproducts = await PRODUCT_SCHEMA.find({});
     const allproducts_maincategoriesuz = [...new Set(allproducts.map(products => products.productMainCategory_uz))].map(categoryItem => {
       categoryItem = {

@@ -15,8 +15,8 @@ const ORDER_SCHEMA = new mongoose.Schema({
     min: 1
   },
   orderedAt: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    required: true
   },
   contacted: {
     type: Boolean,
