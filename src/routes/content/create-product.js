@@ -83,13 +83,12 @@ CREATE_PRODUCT.post("/create-product", verify_admin, upload.array("productImages
       productSubCategory_uz,
       productSubCategory_ru,
     });
-    console.log(urls, productSizesAndQuantity, productDescription_ru, productDescription_uz)
     if (NEW_PRODUCT) {
       res.status(201).json({
         message: "Successfully created!",
       });
     } else {
-      res.status(500).json({
+      res.status(400).json({
         message: "Something went wrong in the server!",
       });
     }
