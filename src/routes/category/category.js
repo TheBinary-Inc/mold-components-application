@@ -6,7 +6,7 @@ const CATEGORY = express.Router();
 CATEGORY.get("/categories/:categoryName", async (req, res) => {
   const { categoryName } = req.params;
   if(categoryName){
-    const result = await PRODUCT_SCHEMA.find({productMainCategory_uz: categoryName});
+    const result = await PRODUCT_SCHEMA.find({$or:[{productMainCategory_uz: categoryName},{productMainCategory_ru: categoryName}]});
       let maincategory = sizePriceQuantity(result)
     
     if(maincategory){

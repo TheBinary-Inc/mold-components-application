@@ -6,7 +6,7 @@ const SUBCATEGORY = express.Router();
 SUBCATEGORY.get("/subcategories/:subCategoryName", async (req, res) => {
   const { subCategoryName } = req.params;
   if(subCategoryName){
-    const result = await PRODUCT_SCHEMA.find({productSubCategory_uz: subCategoryName})
+    const result = await PRODUCT_SCHEMA.find({$or:[{productSubCategory_uz: subCategoryName},{productSubCategory_ru: subCategoryName}]});
     let subCategory = sizePriceQuantity(result)
     if(subCategory){
       res.status(200).json({
