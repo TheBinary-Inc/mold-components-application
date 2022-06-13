@@ -12,7 +12,11 @@ CATEGORY.get("/categories/:categoryName", async (req, res) => {
     if(maincategory){
       res.status(200).json({
         message: "Successfull fetched!",
-        maincategory
+        maincategory,
+        maincategoryTranslate: {
+          uz: maincategory[0]?.productMainCategory_uz,
+          ru: maincategory[0]?.productMainCategory_ru,
+        }
       })
     }
     else{
