@@ -11,7 +11,11 @@ SUBCATEGORY.get("/subcategories/:subCategoryName", async (req, res) => {
     if(subCategory){
       res.status(200).json({
         message: "Successfull fetched!",
-        subCategory
+        subCategory,
+        subCategoryTranslate: {
+          uz: subCategory[0]?.productSubCategory_uz,
+          ru: subCategory[0]?.productSubCategory_ru
+        }
       })
     }
     else{
