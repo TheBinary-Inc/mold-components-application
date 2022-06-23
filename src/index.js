@@ -17,6 +17,7 @@ const SEARCH_PRODUCTS = require("./routes/content/searchproducts");
 const MANAGE_PRODUCTS = require("./routes/content/manageproducts");
 const ORDER_UPDATE = require("./routes/cart/update-single-order");
 const ORDER_DELETE = require("./routes/cart/delete-single-order");
+const UPDATE_PRODUCT = require("./routes/update/product-update");
 require("dotenv/config");
 
 const app = express();
@@ -39,6 +40,7 @@ app.use("/product", CREATE_PRODUCT);
 app.use("/product", ALL_PRODUCTS);
 app.use("/product", SINGLE_PRODUCT); 
 app.use("/product", SEARCH_PRODUCTS);
+app.use("/product", UPDATE_PRODUCT);
 app.use("/manage", MANAGE_PRODUCTS);
 app.use("/category", CATEGORY);
 app.use("/category", SUBCATEGORY);
