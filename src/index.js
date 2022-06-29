@@ -32,6 +32,9 @@ mongoose
     console.log("COULDN'T CONNECT TO CLUSTER", err);
   });
 
+
+
+  
 app.use(cors());
 app.use(express.json());
 app.use("/auth", CREATE_ADMIN);
@@ -40,7 +43,7 @@ app.use("/product", CREATE_PRODUCT);
 app.use("/product", ALL_PRODUCTS);
 app.use("/product", SINGLE_PRODUCT); 
 app.use("/product", SEARCH_PRODUCTS);
-app.use("/product", UPDATE_PRODUCT);
+app.use("/product", UPDATE_PRODUCT);     
 app.use("/manage", MANAGE_PRODUCTS);
 app.use("/category", CATEGORY);
 app.use("/category", SUBCATEGORY);
@@ -51,6 +54,7 @@ app.use("/order", ORDER_OF_CART);
 app.use("/order", ORDER_UPDATE);
 app.use("/order", ORDER_DELETE);
 app.use("/validation", VALIDATION);
+
 
 app.listen(PORT, () => {
   console.log(`LISTENING ON PORT ${PORT}`); 
