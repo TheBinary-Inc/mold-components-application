@@ -21,7 +21,7 @@ ORDER_OF_CART.post("/create-order", async (req, res) => {
         fullname,
         phonenumber, 
         orderedproducts,
-        orderedAt: JSON.stringify(new Date().getDate() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getFullYear() + "/" + new Date().getHours() + 5 + " : " + new Date().getMinutes())
+        orderedAt: JSON.stringify(new Date().getDate() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getFullYear() + "/" + (new Date().getHours() + 5) + " : " + new Date().getMinutes())
     })
     if(NEW_ORDER){
       res.status(201).json({
