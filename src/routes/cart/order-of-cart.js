@@ -3,6 +3,7 @@ const Joi = require("joi");
 const varify_admin = require("../../middlewares/verify_token");
 const ORDER_SCHEMA = require("../../models/Order");
 const ORDER_OF_CART = express.Router();
+const momentTime = require("moment");
 
 ORDER_OF_CART.post("/create-order", async (req, res) => {
   const { fullname, phonenumber, orderedproducts } = req.body;
@@ -20,7 +21,7 @@ ORDER_OF_CART.post("/create-order", async (req, res) => {
         fullname,
         phonenumber, 
         orderedproducts,
-        orderedAt: String(new Date())
+        orderedAt: momentTime().format('MMMM Do YYYY, h:mm:ss a')
     })
     if(NEW_ORDER){
       res.status(201).json({
