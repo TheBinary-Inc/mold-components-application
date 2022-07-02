@@ -21,12 +21,12 @@ ORDER_OF_CART.post("/create-order", async (req, res) => {
         fullname,
         phonenumber, 
         orderedproducts,
-        orderedAt: JSON.stringify(new Date().getDate() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getFullYear() + "/" + new Date().getHours() + " : " + new Date().getMinutes())
+        orderedAt: JSON.stringify(new Date().getDate() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getFullYear() + "/" + new Date().getHours() + 5 + " : " + new Date().getMinutes())
     })
     if(NEW_ORDER){
       res.status(201).json({
         message: "Successfully ordered. Please wait until we contact!"
-      })
+      }) 
     }
     else{
       res.status(500).json({
