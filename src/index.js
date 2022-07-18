@@ -24,7 +24,7 @@ const app = express();
 const PORT = process.env.PORT || 1337;
 const MONGO_CREDENCIALS = process.env.MONGO_CREDENCIALS;
 mongoose
-  .connect(MONGO_CREDENCIALS)
+  .connect(MONGO_CREDENCIALS) 
   .then(() => {
     console.log("CONNECTED TO MOLD-COMPONENTS CLUSTER");
   })
