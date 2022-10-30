@@ -3,7 +3,7 @@ const PRODUCT_SCHEMA = require("../../models/Product");
 const sizePriceQuantity = require("../../helpers/size_price_quantity");
 const CATEGORY_REEL = express.Router();
 
-CATEGORY_REEL.get("/category-reel", async (req, res) => { 
+CATEGORY_REEL.get("/category-reel", async (req, res) => {  
   const mainCategoryData = await PRODUCT_SCHEMA.find({})
   const mainCategory_uz  = [...new Set( mainCategoryData.map(product => product?.productMainCategory_uz))]
   const mainCategory_ru  = [...new Set( mainCategoryData.map(product => product?.productMainCategory_ru))]
