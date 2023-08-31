@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "nodemon ./src"
+    "start": "node ./src"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
